@@ -23,10 +23,12 @@ public class RecursividadeClass {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Você escolheu o método recursivo 1");
-                    System.out.println("Leia do teclado as informações necessárias");
-                    System.out.println("Chame o método recursivo e apresente o resultado:");
-                    System.out.println("Resultado do metodo recursivo 1: " + metodo1());
+                    System.out.println("Você escolheu o método recursivo 1: multiplica número com seu antecessor até chegar em 1 e exibe no console o valor da multiplicação");
+                    System.out.println("Digite um número inteiro: ");
+                    int numEscolhido = scanner.nextInt();
+                    int valorFinal = multiplicaAntecessor(numEscolhido);
+                    
+                    System.out.println("O valor final é: " + valorFinal);
                     break;
                 case 2:
                     System.out.println("Você escolheu o método recursivo 2");
@@ -63,8 +65,14 @@ public class RecursividadeClass {
         scanner.close();
     }
 
-    public static int metodo1() {
-        return 1;
+    // Criar um método recursivo que multiplique com seu antecessor até chegar em 1 e exiba no console o valor da multiplicação.
+    public static int multiplicaAntecessor(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            n *= multiplicaAntecessor(n - 1);
+            return n;
+        }
     }
 
     public static double metodo2() {
