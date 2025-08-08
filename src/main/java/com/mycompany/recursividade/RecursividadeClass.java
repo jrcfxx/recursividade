@@ -27,14 +27,20 @@ public class RecursividadeClass {
                     System.out.println("Digite um número inteiro: ");
                     int numEscolhido = scanner.nextInt();
                     int valorFinal = multiplicaAntecessor(numEscolhido);
-                    
+
                     System.out.println("O valor final é: " + valorFinal);
                     break;
                 case 2:
-                    System.out.println("Você escolheu o método recursivo 2");
-                    System.out.println("Leia do teclado as informações necessárias");
-                    System.out.println("Chame o método recursivo e apresente o resultado:");
-                    System.out.println("Resultado do metodo recursivo 2: " + metodo2());
+                    System.out.println("Você escolheu o método recursivo 2: ");
+                    System.out.println("Digite o tamanho do seu vetor: Metodo recursivo 2: Criar um método recursivo que receba um vetor com N números inteiros e que ao final some todos e veja se é um numero par ou impar.");
+                    int tamEscolhido = scanner.nextInt();
+                    int[] vetUsuario = new int[tamEscolhido];
+                    for (int i = 0; i < tamEscolhido; i++) {
+                        System.out.println("Dgite o valor: " + i + 1);
+                        vetUsuario[i] = scanner.nextInt();
+                    }
+                    ;
+                    System.out.println("Resultado do metodo recursivo 2: " + somaVetorRecursivo(vetUsuario));
                     break;
                 case 3:
                     System.out.println("Você escolheu o método recursivo 3");
@@ -75,8 +81,9 @@ public class RecursividadeClass {
         }
     }
 
-    public static double metodo2() {
-        return 3.1415;
+    // Criar um método recursivo que receba um vetor com N números inteiros e que ao final some todos e veja se é um numero par ou impar.
+    public static double somaVetorRecursivo(int[] vet) {
+        
     }
 
     public static String metodo3() {
