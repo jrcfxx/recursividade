@@ -12,11 +12,12 @@ public class RecursividadeClass {
         do {
             System.out.println("\n============================================");
             System.out.println("\nSelecione a opcao desejada:\n");
-            System.out.println("1. Metodo recursivo 1");
-            System.out.println("2. Metodo recursivo 2");
-            System.out.println("3. Metodo recursivo 3");
-            System.out.println("4. Encontrar a posicao de um numero em um vetor");
-            System.out.println("5. Sair");
+            System.out.println("1. Metodo recursivo 1: Criar um método recursivo que multiplique com seu antecessor até chegar em 1 e exiba no console o valor da multiplicação.");
+            System.out.println("2. Metodo recursivo 2: Criar um método recursivo que receba um vetor com N números inteiros e que ao final some todos e veja se é um numero par ou impar.");
+            System.out.println("3. Metodo recursivo 3: Implemente um função recursiva para inverter uma string. Se o tamanho do texto for 0 ou 1, retorne ela mesma, caso contrário retorne o texto invertido.");
+            System.out.println("3. Metodo recursivo 4: Desenvolva uma função recursiva que conte quantas vezes um determinado dígito aparece em um número inteiro N.");
+            System.out.println("5. Metodo recursivo 5: Encontrar a posicao de um numero em um vetor");
+            System.out.println("6. Sair");
             System.out.print("\nEscolha uma opcao: ");
             opcao = scanner.nextInt();
 
@@ -39,7 +40,7 @@ public class RecursividadeClass {
                     System.out.println("Chame o método recursivo e apresente o resultado:");
                     System.out.println("Resultado do metodo recursivo 3: " + metodo3());
                     break;
-                case 4:
+                case 5:
                     System.out.print("Digite o tamanho do vetor: ");
                     int n = scanner.nextInt();
                     int[] vet = new int[n];
@@ -51,7 +52,7 @@ public class RecursividadeClass {
                     int x = scanner.nextInt();
                     System.out.println("Numero " + x + " -> posicao: " + encontrar(vet, n, x));
                     break;
-                case 5:
+                case 6:
                     System.out.println("Saindo do programa...");
                     break;
                 default:
@@ -74,13 +75,13 @@ public class RecursividadeClass {
         return "resultado 3";
     }
 
-    public static int encontrar(int[] A, int n, int x){
+    public static int encontrar(int[] A, int n, int x) {
         int pos = -1;
-        if(n>0){
-            if(A[n-1] == x){
-                pos = n-1;
+        if (n > 0) {
+            if (A[n - 1] == x) {
+                pos = n - 1;
             } else {
-                pos = encontrar(A, n-1, x);
+                pos = encontrar(A, n - 1, x);
             }
         }
         return pos;
