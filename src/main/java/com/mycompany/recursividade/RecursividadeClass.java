@@ -46,6 +46,7 @@ public class RecursividadeClass {
                 case 3:
                     System.out.println("Você escolheu o método recursivo 3");
                     System.out.println("Digite a palavra: ");
+                    scanner.nextLine();
                     String palavra = scanner.nextLine();
                     System.out.println("Resultado do metodo recursivo 3: " + inverterString(palavra));
                     break;
@@ -93,9 +94,13 @@ public class RecursividadeClass {
         return soma;
     }
 
-    // função p/ inverter uma string. if tamanho do texto = 0 || 1, retorne ela mesma, else return texto invertido.
+    // função recursiva p/ inverter uma string. if tamanho do texto = 0 || 1, retorne ela mesma, else return texto invertido.
     public static String inverterString(String palavra) {
-        return "resultado 3";
+        if (palavra.length() <= 1) {
+            return palavra;
+        } else {
+            return inverterString(palavra.substring(1)) + palavra.charAt(0);
+        }
     }
 
     public static int encontrar(int[] A, int n, int x) {
