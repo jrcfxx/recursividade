@@ -15,7 +15,7 @@ public class RecursividadeClass {
             System.out.println("1. Metodo recursivo 1: Criar um método recursivo que multiplique com seu antecessor até chegar em 1 e exiba no console o valor da multiplicação.");
             System.out.println("2. Metodo recursivo 2: Criar um método recursivo que receba um vetor com N números inteiros e que ao final some todos e veja se é um numero par ou impar.");
             System.out.println("3. Metodo recursivo 3: Implemente um função recursiva para inverter uma string. Se o tamanho do texto for 0 ou 1, retorne ela mesma, caso contrário retorne o texto invertido.");
-            System.out.println("3. Metodo recursivo 4: Desenvolva uma função recursiva que conte quantas vezes um determinado dígito aparece em um número inteiro N.");
+            System.out.println("4. Metodo recursivo 4: Desenvolva uma função recursiva que conte quantas vezes um determinado dígito aparece em um número inteiro N.");
             System.out.println("5. Metodo recursivo 5: Encontrar a posicao de um numero em um vetor");
             System.out.println("6. Sair");
             System.out.print("\nEscolha uma opcao: ");
@@ -27,14 +27,21 @@ public class RecursividadeClass {
                     System.out.println("Digite um número inteiro: ");
                     int numEscolhido = scanner.nextInt();
                     int valorFinal = multiplicaAntecessor(numEscolhido);
-                    
+
                     System.out.println("O valor final é: " + valorFinal);
                     break;
                 case 2:
-                    System.out.println("Você escolheu o método recursivo 2");
-                    System.out.println("Leia do teclado as informações necessárias");
-                    System.out.println("Chame o método recursivo e apresente o resultado:");
-                    System.out.println("Resultado do metodo recursivo 2: " + metodo2());
+                    System.out.println("Você escolheu o método recursivo 2: ");
+                    System.out.println("Digite o tamanho do seu vetor: ");
+                    int tamEscolhido = scanner.nextInt();
+                    int[] vetUsuario = new int[tamEscolhido];
+                    for (int i = 0; i < tamEscolhido; i++) {
+                        System.out.println("Dgite o valor: " + (i + 1));
+                        vetUsuario[i] = scanner.nextInt();
+                    }
+                    ;
+
+                    System.out.println("Resultado do metodo recursivo 2: " + somaVetorRecursivo(vetUsuario, tamEscolhido));
                     break;
                 case 3:
                     System.out.println("Você escolheu o método recursivo 3");
@@ -75,8 +82,14 @@ public class RecursividadeClass {
         }
     }
 
-    public static double metodo2() {
-        return 3.1415;
+    // Criar um método recursivo que receba um vetor com N números inteiros e que ao final some todos.
+    public static int somaVetorRecursivo(int[] vet, int tamanho) {
+        int t = tamanho - 1;
+        if (t == 0) {
+            return vet[0];
+        }
+        int soma = vet[t] + somaVetorRecursivo(vet, t - 1);
+        return soma;
     }
 
     public static String metodo3() {
